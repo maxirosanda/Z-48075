@@ -7,14 +7,10 @@
 
 body{
     font-family: 'Quicksand', sans-serif;
-}
-
-.bodyIndex{
     display: grid;
     grid-template-columns: repeat(4,1fr);
     grid-template-rows: 80px 300px auto 100px;
 }
-
 
 .bodyIndex{
     grid-template-areas: "nav    nav    nav    nav"
@@ -40,11 +36,10 @@ body{
 }
 .navbar{
     grid-area: nav;
-    background-color: #0a1266 ;
+    background-color: #46660a ;
     display: flex;
     align-items: center;
     justify-content:center;
-    position: relative;
     align-items: center;
     
 }
@@ -86,6 +81,7 @@ body{
     list-style-type: none;
     background-color:#0a1266;
     left: -12px;
+    z-index: 2;
 }
 @media(max-width:576px){
     .navbar{
@@ -109,15 +105,18 @@ body{
         justify-content: start;
         padding-top: 60px;
         align-items: center;
-        left: -300px;
+        top: 0;
+        left: -500px;
         transition: 0.2s;
     }
     .navbar > ul:hover {
         left: 0;
     }
+    
     .logo{
         position: static;
     }
+    
 
 }
 .headerIndex{
