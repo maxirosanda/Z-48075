@@ -1,0 +1,310 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+body{
+    font-family: 'Quicksand', sans-serif;
+}
+
+.bodyIndex{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: 80px 300px auto 100px;
+}
+
+
+.bodyIndex{
+    grid-template-areas: "nav    nav    nav    nav"
+                         "header header header header"
+                         "main   main   main   aside"
+                         "footer footer footer footer";
+}
+@media(max-width:768px){
+    .bodyIndex{
+        grid-template-rows: 80px 300px auto auto 100px;
+        grid-template-areas: "nav    nav    nav    nav"
+                             "header header header header"
+                             "main   main   main   main"
+                             "aside  aside  aside  aside"
+                             "footer footer footer footer";
+    }
+}
+.bodySinAside{
+    grid-template-areas: "nav    nav    nav    nav"
+                         "header header header header"
+                         "main   main   main   main"
+                         "footer footer footer footer";
+}
+.navbar{
+    grid-area: nav;
+    background-color: #0a1266 ;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    position: relative;
+    align-items: center;
+    
+}
+.logo{
+    width: 48px;
+    height: 48px;
+    margin: 10px;
+    position: absolute;
+    left: 10px;
+}
+.navbar > .fa-bars{
+    display: none;
+}
+.navbar > ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+.navbar > ul > li{
+    position: relative;
+}
+.navbar > ul > li:hover ul{
+    max-height: 300px;
+    transition: 0.5s;
+}
+.navbar  ul  li  a{
+    display: block;
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    padding: 20px;
+}
+
+.navbar > ul > li > ul {
+    max-height: 0;
+    overflow: hidden;
+    position: absolute;
+    list-style-type: none;
+    background-color:#0a1266;
+    left: -12px;
+}
+@media(max-width:576px){
+    .navbar{
+        justify-content: space-between;
+    }
+    .navbar > .fa-bars{
+        display: block;
+        color: white;
+        font-size: 30px;
+        padding: 20px;
+    }
+    .navbar > .fa-bars:hover + ul {
+        left: 0;
+    } 
+    .navbar > ul {
+        position: fixed;
+        flex-direction: column;
+        background-color: #0a1266;
+        width: 250px;
+        height: 100vh;
+        justify-content: start;
+        padding-top: 60px;
+        align-items: center;
+        left: -300px;
+        transition: 0.2s;
+    }
+    .navbar > ul:hover {
+        left: 0;
+    }
+    .logo{
+        position: static;
+    }
+
+}
+.headerIndex{
+    grid-area: header;
+    background-image: url(../img/piasaje.png);
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.headerIndex-info{
+    color: white;
+}
+@media(max-width:576px){
+    .headerIndex{
+        height: 200px;
+    }
+    .headerIndex-info{
+        width: 320px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+@media(min-width:768px){
+    .headerIndex-info{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .headerIndex-info h1{
+        font-size: 48px;
+    }
+    .headerIndex-info p{
+        font-size: 24px;
+    }
+}
+main{
+    grid-area: main;
+}
+.cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.card {
+    display: flex;
+    width: 350px;
+    column-gap: 10px;
+    margin: 10px;
+}
+.price{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.price span{
+    margin-top: 10px;
+    font-weight: bold;
+}
+.btn {
+    display: block;
+    width: 90px;
+    margin-top: 10px;
+    text-align: center;
+    padding: 5px 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    background-color:#121fb3;
+    color: white;
+
+}
+aside{
+    grid-area: aside;
+}
+.adds{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.add{
+    width: 150px;
+    height: 100px;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 10px;
+}
+.add img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+.add h4 {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    padding: 10px;
+    font-size: 12px;
+    text-align: center;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.507);
+}
+footer{
+    grid-area: footer;
+    background-color: #0a1266;
+    grid-area: footer;
+}
+
+/*Formulario de contacto*/
+
+.formulario{
+    padding: 30px;
+    background-color: #0a1266;
+    box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.52);
+    max-width: 900px;
+    margin: 10px auto;
+    border-radius: 10px;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 80px;
+    grid-template-areas: "titulo   titulo"
+                         "nomApell email"
+                         "tel      asunto"
+                         "mensaje  mensaje"
+                         "btn      btn"
+                         ;
+
+}
+.formulario h2:nth-child(1){
+    grid-area: titulo;
+    color: white;
+}
+
+.formulario label:nth-child(2){
+    grid-area: nomApell;
+}
+
+.formulario label:nth-child(3){
+    grid-area: email;
+}
+
+.formulario label:nth-child(4){
+    grid-area: tel;
+}
+.formulario label:nth-child(5){
+    grid-area: asunto;
+}
+.formulario label:nth-child(6){
+    grid-area: mensaje;
+}
+.formulario button:nth-child(7){
+    grid-area: btn;
+    background-color: #121fb3;
+    border: 0;
+    color: white;
+    border-radius: 5px;
+    font-size: 20px;
+    margin: 10px;
+    margin-top: 20px;
+    font-family: 'Quicksand', sans-serif;
+
+}
+
+.formulario > label{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: white;
+}
+
+.formulario > label > input , .formulario > label >textarea {
+    background-color: transparent;
+    border: 0;
+    outline: none;
+    border-bottom: 1px solid white;
+}
+.formulario > label > input{
+    color: white;
+    font-family: 'Quicksand', sans-serif;
+}
+
+
+.formulario > label > textarea{
+    height: 70px;
+}

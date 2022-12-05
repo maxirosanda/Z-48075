@@ -1,0 +1,82 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.cajaPadre{
+    background-color: aqua;
+    display: grid;
+    grid-template-columns: 100px 200px;
+    grid-template-rows: 100px 200px;
+    justify-items: stretch;
+    align-items: stretch;
+    justify-content: space-around;
+    align-content: space-between;
+    /*
+    column-gap: 10px;
+    row-gap: 15px;
+    */
+    gap: 10px;
+}
+.cajaHijo1{
+    background-color: blue;
+    justify-self: center;
+    align-self: center;
+}
+.cajaHijo2{
+    background-color: rgb(49, 129, 30);
+}
+.cajaHijo3{
+    background-color: blueviolet;
+}
+
+.cajaHijo4{
+    background-color: brown;
+}
+
+.cajaHijo5{
+    background-color: crimson;
+}
+.cajaHijo6{
+    background-color: darkgreen;
+}
+
+/*Ejemplo estructura*/
+.grilla{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: 100px 200px 200px 100px;
+    gap: 10px;
+    grid-template-areas: "nav header header header"
+                         "nav main   main   aside"
+                         "nav publi  publi  aside"
+                         "nav footer footer footer";
+}
+
+.navegador{
+    grid-area: nav;
+    background-color: aqua;
+}
+header{
+    grid-area: header;
+    background-color: blue;
+}
+main{
+    grid-area: main;
+    background-color: chocolate;
+}
+.publicidad{
+    grid-area: publi;
+    background-color: darkblue;
+}
+aside{
+    grid-area: aside;
+    background-color: coral;
+}
+
+footer{
+    grid-area: footer;
+    background-color: crimson;
+}
+
