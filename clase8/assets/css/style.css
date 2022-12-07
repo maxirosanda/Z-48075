@@ -1,0 +1,149 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ul{
+    list-style-type: none;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.caja{
+    width: 200px;
+    height: 100px;
+    margin: 20px auto;
+    background-image: linear-gradient(rgb(0, 128, 0) 0%,rgba(255, 0, 0, 0.548) 80%);
+    transition: transform 1s , height 3s;
+}
+.caja:hover{
+    transform: scale(2,1);
+    height: 200px;
+    transition: transform 2s , height 6s;
+}
+img{
+    width: 200px;
+    margin: 10px;
+    /*transition: 3s;*/
+}
+.img1:hover{
+    transform: translate(50px,40px);
+}
+.img2{
+    transition: 2s;
+}
+.img2:hover{
+    transform: scale(2);
+}
+
+.img3:hover{
+    transform: rotateX(360deg) ;
+}
+.img4:hover{
+    transform: rotateY(360deg);
+}
+.img5:hover{
+    transform: rotateZ(-360deg);
+}
+
+.img6:hover{
+    transform: skewX(5deg);
+}
+.img7:hover{
+    transform: skewY(10deg);
+}
+.img8{
+    transform: rotateZ(5deg)
+}
+
+.contenedor-circulo{
+    width: 100%;
+    height: 400px;
+
+    padding: 30px;
+}
+
+.circulo{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: blue;
+    margin: 10px;
+    animation-name: mover;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+    animation-delay: 2s;
+}
+
+@keyframes mover {
+    0%{
+        transform: translate(0,0);
+    }
+    25%{
+        transform: translate(450px,0px) scale(1.5);
+        background-color: brown;
+    }
+    50%{
+        transform: translate(450px,200px) scale(1);
+        background-color: transparent;
+
+    }
+    75%{
+        transform: translate(0px,200px) scale(2);
+        background-color: transparent;
+   
+        
+    }
+
+    100%{
+        transform: translate(0,0) scale(1);
+    }
+}
+
+.circulo2{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: blue;
+    margin: 10px;
+    animation-name: moverHorizontal;
+    animation-duration: 3s;
+    animation-timing-function:cubic-bezier(0.25, 0.46, 0.45, 0.94) ;
+
+}
+
+@keyframes moverHorizontal {
+    0%{
+        transform: translate(0,0);
+    }
+    100%{
+        transform: translate(450px,0px);
+    }
+}
+
+.tarjetas{
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+}
+.tarjeta{
+    width: 450px;
+    margin: 20px;
+    background-color: rgb(3, 3, 100);
+    color: white;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    gap: 10px;
+    border-radius: 10px;
+}
+.tarjeta > img {
+    width: 90%;
+}
+.tarjeta > button{
+    width: 70px;
+
+}

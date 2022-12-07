@@ -108,6 +108,7 @@ body{
         top: 0;
         left: -500px;
         transition: 0.2s;
+        z-index: 2;
     }
     .navbar > ul:hover {
         left: 0;
