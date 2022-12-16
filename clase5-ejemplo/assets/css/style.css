@@ -4,7 +4,10 @@
     box-sizing: border-box;
 }
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
-
+@font-face {
+    font-family: fontAwesome ;
+    src: url(../fonts/fa-solid-900.ttf);
+}
 body{
     font-family: 'Quicksand', sans-serif;
     display: grid;
@@ -34,6 +37,33 @@ body{
                          "main   main   main   main"
                          "footer footer footer footer";
 }
+
+.loading{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.562);
+    z-index: 300;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loading i{
+    color: white;
+    font-size: 64px;
+    animation-name: rotar;
+    animation-duration: .5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes rotar {
+    0%{
+        transform: rotateZ(0deg);
+    }
+    100%{
+        transform: rotateZ(360deg);
+    }
+}
 .navbar{
     grid-area: nav;
     background-color: #46660a ;
@@ -41,6 +71,7 @@ body{
     align-items: center;
     justify-content:center;
     align-items: center;
+
     
 }
 .logo{
@@ -50,7 +81,12 @@ body{
     position: absolute;
     left: 10px;
 }
-.navbar > .fa-bars{
+.navbar > label::before{
+    content:" \f0c9";
+    font-family:fontAwesome ;
+    display: none;
+}
+.navbar > input[type=checkbox]{
     display: none;
 }
 .navbar > ul {
@@ -86,14 +122,19 @@ body{
 @media(max-width:576px){
     .navbar{
         justify-content: space-between;
+        position: fixed;
+        width: 100vw;
     }
-    .navbar > .fa-bars{
+    .navbar > label::before{
         display: block;
         color: white;
         font-size: 30px;
         padding: 20px;
     }
-    .navbar > .fa-bars:hover + ul {
+    .navbar > input[type=checkbox]:checked + label::before {
+        content: "\58";
+    } 
+    .navbar > input[type=checkbox]:checked + ul {
         left: 0;
     } 
     .navbar > ul {
@@ -101,11 +142,11 @@ body{
         flex-direction: column;
         background-color: #0a1266;
         width: 250px;
-        height: 100vh;
+        height: calc(100vh - 70px);
         justify-content: start;
         padding-top: 60px;
         align-items: center;
-        top: 0;
+        bottom: 0;
         left: -500px;
         transition: 0.2s;
         z-index: 2;
@@ -251,6 +292,22 @@ footer{
                          ;
 
 }
+@media(max-width:700px){
+    .formulario{
+        border-radius: 0;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 80px;
+        grid-template-areas: "titulo"
+                             "nomApell" 
+                             "email"
+                             "tel"      
+                             "asunto"
+                             "mensaje"  
+                             "btn"
+                             ;
+    
+    }
+}
 .formulario h2:nth-child(1){
     grid-area: titulo;
     color: white;
@@ -308,3 +365,38 @@ footer{
 .formulario > label > textarea{
     height: 70px;
 }
+.videos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.reproductor {
+    width: 500px;
+    height: 350px;
+    position: relative;
+    margin: 20px 0px;
+  }
+
+.reproductor iframe {
+    width: inherit;
+    height: inherit;
+  }
+  .reproductor div {
+    width: inherit;
+    height: inherit;
+  }
+  .reproductor div img {
+    width: inherit;
+    height: inherit;
+  }
+
+  .reproductor div button{
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    border: none;
+    background-color: transparent;
+    color: white;
+    font-size: 128px;
+  }
