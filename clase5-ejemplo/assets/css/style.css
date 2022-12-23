@@ -375,6 +375,7 @@ footer{
     height: 350px;
     position: relative;
     margin: 20px 0px;
+    cursor: pointer;
   }
 
 .reproductor iframe {
@@ -399,4 +400,5 @@ footer{
     background-color: transparent;
     color: white;
     font-size: 128px;
+    cursor: pointer;
   }

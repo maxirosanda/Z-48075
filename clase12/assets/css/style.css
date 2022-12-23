@@ -1,0 +1,105 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*navegaror */
+nav{
+    background-color: #333;
+}
+.topnav {
+    display: flex;
+}
+
+.topnav > a {
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none; 
+}
+
+nav > label , nav > input {
+   display: none;
+}
+
+
+
+  @media screen and (max-width: 500px) {
+    nav > label{
+        display: block;
+        color: white;
+        font-size: 30px;
+        padding: 10px;
+    }
+    nav >input:checked + .topnav{
+        max-height: 400px;
+    } 
+  .topnav{
+      flex-direction: column;
+      max-height: 0px;
+      overflow: hidden;
+      transition: 0.5s;
+    }
+}
+/* fin navegador */
+.boton{
+     background-color: #333;
+     margin: 10px;
+     display: block;
+     width: 100px;
+     padding: 10px;
+     text-align: center;
+     color: white;
+     border-radius: 5px;
+     text-decoration: none;
+     box-shadow: 15px 17px 18px -15px rgba(0,0,0,0.75);
+}
+.boton:hover{
+    background-color: rgb(22, 22, 22);
+}
+.boton:visited{
+    background-color: blueviolet;
+}
+.boton:active{
+    box-shadow: 10px 10px 19px -12px rgba(0,0,0,0.75);
+
+}
+.checkbox input:checked + label {
+    color: blue;
+}
+
+.padre{
+    width: 300px;
+    height: 200px;
+    background-color: aquamarine;
+}
+
+.hijo{
+    width: 50px;
+    height: 50px;
+    background-color: blue;
+    margin: 10px;
+}
+
+.padre div:not(.preferido){
+    background-color: brown;
+}
+
+.lista{
+    margin: 10px;
+    width: 100px;
+
+}
+.lista > li:nth-child(3){
+    background-color: blue;
+}
+.lista2{
+    margin: 20px;
+}
+.lista2 > img {
+    width: 300px;
+}
+.lista2 h3:nth-of-type(1){
+    background-color: blue;
+}
